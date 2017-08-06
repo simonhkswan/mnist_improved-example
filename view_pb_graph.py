@@ -1,8 +1,8 @@
 import tensorflow as tf
 
 # Change the two file paths
-pb_file_loc = '##PB FILE PATH##'
-log_file_loc = '##LOG OUTPUT PATH FOR TENSOR BOARD##'
+pb_file_loc = 'graphs/mnist_optimised_graph.pb' ##PB FILE PATH##
+log_file_loc = 'graphs/optimised' ##LOG OUTPUT PATH FOR TENSOR BOARD##
 
 fw = tf.summary.FileWriter(log_file_loc)
 from tensorflow.python.platform import gfile

@@ -4,7 +4,7 @@ import os.path
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
 
-EXPORT_DIR = './model'
+EXPORT_DIR = './graphs'
 
 if os.path.exists(EXPORT_DIR):
     shutil.rmtree(EXPORT_DIR)
@@ -102,8 +102,6 @@ accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
 
 # Initializing the variables
 init = tf.global_variables_initializer()
-saver = tf.train.Saver([weights['wc1']])
-summary2 = tf.summary.FileWriter('./model/tbgraph')
 
 # Launch the graph
 with tf.Session() as sess:
@@ -126,9 +124,6 @@ with tf.Session() as sess:
         step += 1
     print("Optimization Finished!")
 
-    summary2.add_graph(sess.graph)
-    saver.save(sess, './model/my-model', global_step=step)
-
     # Calculate accuracy for 256 mnist test images
     print("Testing Accuracy:", \
           sess.run(accuracy, feed_dict={x: mnist.test.images[:256],
@@ -144,7 +139,8 @@ with tf.Session() as sess:
     B_OUT = biases['out'].eval(sess)
 
 # Create new graph for exporting
-summary = tf.summary.FileWriter('tbgraph')
+summary = tf.summary.FileWriter('./graphs')
+
 g = tf.Graph()
 with g.as_default():
     x_2 = tf.placeholder("float", shape=[None, 784], name="input")
