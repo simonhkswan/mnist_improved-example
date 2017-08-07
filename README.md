@@ -8,6 +8,10 @@ The optimised graph should look like:
 
 ![Picture of the optimised graph from TensorBoard.](./optimised_graph.png)
 
+The original graph in the android tensorflow stock app looks like:
+
+![Picture of the original graph from TensorBoard.](./stock_pb.png)
+
 
 
 ### mnist.py
