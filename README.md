@@ -1,4 +1,6 @@
-# Custom Tensor Flow Android App
+# MNIST Tensor Flow example Model + Optimised Graph
+
+The above code is used to generate an MNIST Model which could potentially incorporated into an application. There is also a python script which creates the necessary .local file to view the TF graph in TensorBoard.
 
 ### view_pb_graph.py
 
