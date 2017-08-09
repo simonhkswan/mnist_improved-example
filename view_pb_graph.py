@@ -2,8 +2,8 @@ import tensorflow as tf
 import time
 
 # Change the two file paths
-pb_file_loc = 'graphs/mnist_working_graph.pb' ##PB FILE PATH##
-log_file_loc = 'graphs/mnistworking' ##LOG OUTPUT PATH FOR TENSOR BOARD##
+pb_file_loc = '../CIFAR10/graphs/cifar_optimized.pb' ##PB FILE PATH##
+log_file_loc = '../CIFAR10/graphs/optimized' ##LOG OUTPUT PATH FOR TENSOR BOARD##
 
 fw = tf.summary.FileWriter(log_file_loc)
 from tensorflow.python.platform import gfile
